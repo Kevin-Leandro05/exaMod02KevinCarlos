@@ -135,12 +135,12 @@ public class AlumnowebJpaController implements Serializable {
             em.close();
         }
     }
-    
+
     //Validar usuario
     public Alumnoweb validar(Alumnoweb u) {
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createNamedQuery("Alumnoweb.validar");
+            Query q = em.createNamedQuery("Alumnoweb.findByNdniEstdWeb");
             q.setParameter("ndniEstdWeb", u.getNdniEstdWeb());
             Alumnoweb usuaEncontrado = (Alumnoweb) q.getSingleResult();
 
@@ -163,7 +163,7 @@ public class AlumnowebJpaController implements Serializable {
         try {
             // Buscar el usuario por logiUsua en vez de codiUsua
             TypedQuery<Alumnoweb> query = em.createQuery("SELECT a FROM Alumnoweb a WHERE a.logiEstd = :logiEstd", Alumnoweb.class);
-            query.setParameter("logiUsua", logiEstd);
+            query.setParameter("logiEstd", logiEstd);
             List<Alumnoweb> resultados = query.getResultList();
 
             if (resultados.isEmpty()) {
@@ -199,7 +199,9 @@ public class AlumnowebJpaController implements Serializable {
     }
 
     public static void main(String[] args) {
-       
+        String password = "1234";
+        String hashed = BCrypt.hashpw(password, BCrypt.gensalt(12));
+        System.out.println("Hash de 1234: " + hashed);
     }
 
 }

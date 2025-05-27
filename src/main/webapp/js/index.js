@@ -9,17 +9,17 @@ $(document).ready(function () {
             return;
         }
 
-        let parametro = {logi: logi, pass: pass};
-        $.getJSON("http://localhost:8080/FacturaWeb/validarusuario", parametro, function (data) {
+        let parametro = {usuario: logi, contra: pass};
+        $.getJSON("http://localhost:8080/Preg01/validarUsuario", parametro, function (data) {
             if (data.resultado === "ok") {
-                // Almacenar token
-                sessionStorage.setItem("token", data.token);
-
                 // Almacenar el código de usuario
-                sessionStorage.setItem("codiUsua", data.codiUsua);
+                sessionStorage.setItem("codiUsua", data.codiEstWeb);
 
                 // Almacenar el login del usuario para mostrarlo en el perfil
-                sessionStorage.setItem("username", logi);
+                sessionStorage.setItem("username", data.logiEstd);
+                
+                // Almacenar el login del usuario para mostrarlo en el perfil
+                sessionStorage.setItem("dni", data.ndniEstdWeb);
 
                 console.log(data.token);
                 window.location.href = "principal.html";

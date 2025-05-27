@@ -99,6 +99,12 @@ public class Alumnoweb implements Serializable {
         this.passEstd = passEstd;
     }
 
+    public Alumnoweb(Integer codiEstWeb, String ndniEstdWeb, String passEstd) {
+        this.codiEstWeb = codiEstWeb;
+        this.ndniEstdWeb = ndniEstdWeb;
+        this.passEstd = passEstd;
+    }
+
     public Integer getCodiEstWeb() {
         return codiEstWeb;
     }
