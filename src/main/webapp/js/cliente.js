@@ -29,31 +29,34 @@ $(document).ready(function () {
             }
         },
         ajax: {
-            url: "http://localhost:8080/FacturaWeb/crudcliente",
+            url: "http://localhost:8080/Preg01/listarUsuarios",
             type: "GET",
             data: {
-                opcion: 1,
-                token: token
+                opcion: 1
             },
             dataSrc: ""
         },
         columns: [
-            {data: 'codiClie'},
-            {data: 'codiTipoDocuIden',
+            {data: 'codiEstdWeb'},
+            {data: 'ndniEstdWeb',
                 render: function (data) {
                     return data === 1 ? 'DNI' : 'RUC';
                 }
             },
-            {data: 'numeDocu'},
-            {data: 'nombCli'},
+            {data: 'appaEstdWeb'},
+            {data: 'apmaEstdWeb'},
+            {data: 'nombEstdWeb'},
+            {data: 'fechNaciEstdWeb'},
+            {data: 'logiEstd'},
             {
-                data: 'codiClie', // Columna para colocar los botones
+                data: 'codiEstdWeb', // Columna para colocar los botones
                 render: function (data, type, row, meta) {
                     let para = {
-                        'cod': row.codiClie,
-                        'tipo': row.codiTipoDocuIden,
-                        'num': row.numeDocu,
-                        'nomb': row.nombCli
+                        'cod': row.codiEstdWeb,
+                        'tipo': row.appaEstdWeb,
+                        'aaa': row.apmaEstdWeb,
+                        'num': row.nombEstdWeb,
+                        'nomb': row.fechNaciEstdWeb
                     };
                     let paratxt = JSON.stringify(para);
                     return "<button class='btn btn-warning' onclick=$.fn.editar('" + encodeURIComponent(paratxt) + "') \n\

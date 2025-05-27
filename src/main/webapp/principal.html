@@ -9,22 +9,35 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Principal</title>
+        <title>Factura Cliente</title>
 
-        <!-- Custom fonts for this template-->
+        <!-- Fuentes personalizadas para esta plantilla -->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-        <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+              rel="stylesheet">
 
-        <!-- Custom styles for this template-->
+        <!-- Estilos personalizados para esta plantilla -->
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+        <!-- Css del dataTable -->
+        <link href="data_css/dataTables.dataTables.css" rel="stylesheet" type="text/css"/>
+
+        <!-- CSS DE LOS BOTONES -->
+        <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="https://cdn.datatables.net/buttons/3.1.2/css/buttons.bootstrap4.min.css" rel="stylesheet">
+
+        <!-- CSS PERSONALIZADO -->
+        <link href="css/personalizado.css" rel="stylesheet" type="text/css"/>
+
+        <!-- css de font-awesome para iconos de la exportacion-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     </head>
 
     <body id="page-top">
 
-        <!-- Page Wrapper -->
+        <!-- Envoltorio de página -->
         <div id="wrapper">
 
             <!-- Sidebar -->
@@ -116,9 +129,11 @@
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                         <!-- Sidebar Toggle (Topbar) -->
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
+                        <form class="form-inline">
+                            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </form>
 
                         <!-- Topbar Search -->
                         <form
@@ -175,7 +190,28 @@
                                     <h6 class="dropdown-header">
                                         Alerts Center
                                     </h6>
-                                    
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="mr-3">
+                                            <div class="icon-circle bg-primary">
+                                                <i class="fas fa-file-alt text-white"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="small text-gray-500">December 12, 2019</div>
+                                            <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="mr-3">
+                                            <div class="icon-circle bg-success">
+                                                <i class="fas fa-donate text-white"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="small text-gray-500">December 7, 2019</div>
+                                            $290.29 has been deposited into your account!
+                                        </div>
+                                    </a>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="mr-3">
                                             <div class="icon-circle bg-warning">
@@ -205,7 +241,42 @@
                                     <h6 class="dropdown-header">
                                         Message Center
                                     </h6>
-                                    
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                                 alt="...">
+                                            <div class="status-indicator bg-success"></div>
+                                        </div>
+                                        <div class="font-weight-bold">
+                                            <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                                problem I've been having.</div>
+                                            <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                                 alt="...">
+                                            <div class="status-indicator"></div>
+                                        </div>
+                                        <div>
+                                            <div class="text-truncate">I have the photos that you ordered last month, how
+                                                would you like them sent to you?</div>
+                                            <div class="small text-gray-500">Jae Chun · 1d</div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                                 alt="...">
+                                            <div class="status-indicator bg-warning"></div>
+                                        </div>
+                                        <div>
+                                            <div class="text-truncate">Last month's report looks great, I am very happy with
+                                                the progress so far, keep up the good work!</div>
+                                            <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                        </div>
+                                    </a>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="dropdown-list-image mr-3">
                                             <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
@@ -243,7 +314,6 @@
                                         <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Cambiar Contraseña
                                     </a>
-                                    
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="index.html" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -274,173 +344,42 @@
                     <div class="container-fluid">
 
                         <!-- Page Heading -->
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Panel Principal</h1>
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                        </div>
-
-                        <!-- Content Row -->
-                        <div class="row">
-
-                            <!-- Earnings (Monthly) Card Example -->
-                            <div class="col-xl-3 col-md-6 mb-4">
-                                <div class="card border-left-primary shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                    Earnings (Monthly)</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <!-- COMPONENTES DE MI DATATABLE PARA TODO LO DE DENTROOO -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h4 class="m-0 font-weight-bold text-primary">LISTA DE CLIENTES
+                                    <button class="btn btn-success float-right" data-toggle="modal" data-target="#crearModal">Crear Cliente</button>
+                                </h4>
                             </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="clientes" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>CODIGO</th>
+                                                <th>DNI</th>
+                                                <th>AP PATERNO</th>
+                                                <th>AP MATERNO</th>
+                                                <th>NOMBRE</th>
+                                                <th>FCEHA NACI</th>
+                                                <th>LOGIN</th>
+                                                <th>ACCIONES</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>CODIGO</th>
+                                                <th>DNI</th>
+                                                <th>AP PATERNO</th>
+                                                <th>AP MATERNO</th>
+                                                <th>NOMBRE</th>
+                                                <th>FCEHA NACI</th>
+                                                <th>LOGIN</th>
+                                                <th>ACCIONES</th>
+                                            </tr>
+                                        </tfoot>
 
-                            <!-- Earnings (Monthly) Card Example -->
-                            <div class="col-xl-3 col-md-6 mb-4">
-                                <div class="card border-left-success shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                    Earnings (Annual)</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Earnings (Monthly) Card Example -->
-                            <div class="col-xl-3 col-md-6 mb-4">
-                                <div class="card border-left-info shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
-                                                </div>
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col-auto">
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="progress progress-sm mr-2">
-                                                            <div class="progress-bar bg-info" role="progressbar"
-                                                                 style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                                 aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Pending Requests Card Example -->
-                            <div class="col-xl-3 col-md-6 mb-4">
-                                <div class="card border-left-warning shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                    Pending Requests</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Content Row -->
-
-                        <div class="row">
-
-                            <!-- Area Chart -->
-                            <div class="col-xl-8 col-lg-7">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                                        <div class="dropdown no-arrow">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                                 aria-labelledby="dropdownMenuLink">
-                                                <div class="dropdown-header">Dropdown Header:</div>
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <div class="chart-area">
-                                            <canvas id="myAreaChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Pie Chart -->
-                            <div class="col-xl-4 col-lg-5">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                                        <div class="dropdown no-arrow">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                                 aria-labelledby="dropdownMenuLink">
-                                                <div class="dropdown-header">Dropdown Header:</div>
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <div class="chart-pie pt-4 pb-2">
-                                            <canvas id="myPieChart"></canvas>
-                                        </div>
-                                        <div class="mt-4 text-center small">
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-primary"></i> Direct
-                                            </span>
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-success"></i> Social
-                                            </span>
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-info"></i> Referral
-                                            </span>
-                                        </div>
-                                    </div>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -455,7 +394,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2021</span>
+                            <span>Copyright &copy; Your Website 2020</span>
                         </div>
                     </div>
                 </footer>
@@ -492,23 +431,141 @@
             </div>
         </div>
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- CREAR - MODAL-->
+        <div class="modal fade" id="crearModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #34e3a4;color: #000">
+                        <h5 class="modal-title" id="exampleModalLabel">Crear Paciente</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Crear el tipo documento -->
+                        <div class="row">
+                            <div class="col">TIPO DOCUMENTO:</div>
+                            <div class="coled combito">
+                                <select id="txtTipoDocu">
+                                    <option value="1">DNI</option>
+                                    <option value="2">RUC</option>
+                                </select>
+                            </div>                        
+                        </div>
+                        <!-- Crear el n° de documento -->
+                        <div class="row">
+                            <div class="col">N° DOCUMENTO:</div>
+                            <div class="colcr"><input type="text" id="txtNumDocu" placeholder="87654321"></div>                        
+                        </div>
+                        <!-- Crear el nombre del cliente-->
+                        <div class="row">
+                            <div class="col">NOMBRE:</div>
+                            <div class="colcr"><input type="text" id="txtNombre" placeholder="Ejm. Juanito Diaz"></div>                        
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-primary" id="btnCrearCliente">Crear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- MODIFICAR - MODAL-->
+        <div class="modal fade" id="modificarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #ffc107;color: #000">
+                        <h5 class="modal-title" id="exampleModalLabel">Modificar Cliente</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Mostrar el código -->
+                        <div class="row">
+                            <div class="col">CÓDIGO:</div>
+                            <div class="coled"><input type="text" id="txtCodiEdit" disabled></div>
+                        </div>
+                        <!-- Modificación para el Tipo de Documento -->
+                        <div class="row">
+                            <div class="col">TIPO DOCUMENTO:</div>
+                            <div class="coled combito">
+                                <select id="txtTipoDocuEdit">
+                                    <option value="1">DNI</option>
+                                    <option value="2">RUC</option>
+                                </select>
+                            </div>                        
+                        </div>
+                        <!-- Modificación para N° documento -->
+                        <div class="row">
+                            <div class="col">N° DOCUMENTO:</div>
+                            <div class="coled"><input type="text" id="txtNumDocuEdit" placeholder="87654321"></div>                        
+                        </div>
+                        <!-- Modificación para el nombre del cliente-->
+                        <div class="row">
+                            <div class="col">NOMBRE:</div>
+                            <div class="coled"><input type="text" id="txtNombreEdit" placeholder="Ejm. Juanito Diaz"></div>                        
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-primary" id="btnModificarCliente">Modificar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ELIMINAR - MODAL -->
+        <div class="modal fade" id="eliminarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #dc3545;color: #fff">
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminar CLIENTE</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Está seguro que desea eliminar el registro <span id="eliminarCodi"></span>?
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-primary" id="btnEliminarCliente">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Js del query-->
+        <script src="data_js/jquery-3.7.1.js" type="text/javascript"></script>
+        <script src="data_js/moment.min.js" type="text/javascript"></script>
+
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <!-- Custom scripts for all pages-->
         <script src="js/sb-admin-2.min.js"></script>
 
-        <!-- Page level plugins -->
-        <script src="vendor/chart.js/Chart.min.js"></script>
+        <!-- Js del dataTable -->
+        <script src="data_js/dataTables.js" type="text/javascript"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="js/demo/chart-area-demo.js"></script>
-        <script src="js/demo/chart-pie-demo.js"></script>
+        <!-- JS DE BOTONES PARA LA EXPORTACION -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/3.1.2/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/3.1.2/js/buttons.bootstrap4.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/3.1.2/js/buttons.colVis.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/3.1.2/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/3.1.2/js/buttons.print.min.js"></script>
 
+        <!-- Js de las funciones de CLIENTESSS-->
+        <script src="js/cliente.js" type="text/javascript"></script>
     </body>
 
 </html>
